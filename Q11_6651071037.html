@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển trên form</title>
+</head>
+
+<body>
+
+    <form>
+        <table border="1">
+            <tr>
+                <td colspan="2">
+                    <b>Đăng nhập</b>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mã người dùng</td>
+                <td>
+                    <input type="text" id="maNguoiDung">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mật khẩu</td>
+                <td>
+                    <input type="password" id="matKhau">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Đồng ý" onclick="dangNhap()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="ketqua"></div>
+
+    <script>
+        function dangNhap() {
+            let ma = document.getElementById("maNguoiDung").value;
+            document.getElementById("ketqua").innerText = ma;
+        }
+    </script>
+
+</body>
+</html>
