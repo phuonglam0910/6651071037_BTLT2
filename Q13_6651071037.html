@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        form {
+            width: 600px;
+            margin: 20px auto;
+            background-color: #fffbd6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #336699;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid white;
+            padding: 5px;
+        }
+
+        .cot1 {
+            width: 180px;
+        }
+
+        fieldset {
+            width: 270px;
+            height: 45px;
+            border: 2px solid #993333;
+        }
+
+        legend {
+            color: #993333;
+            font-style: italic;
+        }
+
+        #thongbao {
+            text-align: center;
+            color: #e88a23;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<form>
+    <h1>Đăng ký du lịch</h1>
+
+    <table>
+        <tr>
+            <td class="cot1">Họ và tên</td>
+            <td>
+                <input type="text" id="hoten" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Địa chỉ</td>
+            <td>
+                <input type="text" id="diachi" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Điện thoại</td>
+            <td>
+                <input type="text" id="dienthoai" size="20">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Khách Việt Nam</td>
+            <td>
+                <input type="checkbox" id="khachVN" checked>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Chọn tour</td>
+            <td>
+                <select id="tour">
+                    <optgroup label="Miền Bắc">
+                        <option value="Hà Nội - Hạ Long - Sapa">
+                            Hà Nội - Hạ Long - Sapa
+                        </option>
+                        <option value="Hà Nội - Chùa Hương - Ninh Bình">
+                            Hà Nội - Chùa Hương - Ninh Bình
+                        </option>
+                        <option value="Hà Nội - Cát Bà - Tuần Châu">
+                            Hà Nội - Cát Bà - Tuần Châu
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="Miền Trung">
+                        <option value="Huế - Bạch Mã - Đà Nẵng">
+                            Huế - Bạch Mã - Đà Nẵng
+                        </option>
+                        <option value="Nha Trang - Đà Lạt">
+                            Nha Trang - Đà Lạt
+                        </option>
+                        <option value="Buôn Mê Thuột - Gia Lai - Kontum">
+                            Buôn Mê Thuột - Gia Lai - Kontum
+                        </option>
+                    </optgroup>
+                    <optgroup label="Miền Nam">
+                        <option value="TP.HCM - Cần Thơ - Cà Mau">
+                            TP.HCM - Cần Thơ - Cà Mau
+                        </option>
+                        <option value="TP.HCM - Mỹ Tho">
+                            TP.HCM - Mỹ Tho
+                        </option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phương tiện</td>
+            <td>
+                <input type="radio"
+                       name="phuongtien"
+                       id="maybay"
+                       value="Máy bay">
+                Máy bay
+
+                <input type="radio"
+                       name="phuongtien"
+                       id="oto"
+                       value="Xe ô tô"
+                       checked>
+                Xe ô tô
+            </td>
+        </tr>
+
+        <tr>
+            <td>Số lượng đoàn khách</td>
+            <td>
+                <fieldset>
+                    <legend>Số lượng đoàn khách</legend>
+
+                    Người lớn
+                    <input type="text" id="nguoilon" value="6" size="5">
+
+                    Trẻ em
+                    <input type="text" id="treem" value="4" size="5">
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Ghi chú thêm</td>
+            <td>
+                <textarea id="ghichu" style="width:300px"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button"
+                       id="dongy"
+                       value="Đồng ý"
+                       onclick="dangKy()">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <div id="thongbao"></div>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    function dangKy()
+    {
+        var thongbao = document.getElementById("thongbao");
+        thongbao.innerText = "Bạn đã đăng ký thành công!!!";
+    }
+</script>
+
+</body>
+</html>
